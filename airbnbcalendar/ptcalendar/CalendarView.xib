@@ -134,6 +134,7 @@
             <connections>
                 <outlet property="clearButton" destination="AQa-w6-NFM" id="COu-jV-6pY"/>
                 <outlet property="collectionView" destination="zg3-2H-u8C" id="qMC-e6-oe5"/>
+                <outlet property="titleLabel" destination="Z5a-eY-A8r" id="u28-sn-REP"/>
             </connections>
             <point key="canvasLocation" x="-301.5" y="-189.5"/>
         </view>

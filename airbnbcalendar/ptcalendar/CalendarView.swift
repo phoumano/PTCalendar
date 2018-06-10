@@ -46,6 +46,8 @@ public class CalendarView: UIView {
     
     // MARK: - IBOutlets
     
+    @IBOutlet weak var titleLabel: UILabel!
+    
     @IBOutlet weak var clearButton: UIButton! {
         didSet {
             clearButton.accessibilityIdentifier = ViewID.clearButton.rawValue
@@ -120,7 +122,6 @@ public class CalendarView: UIView {
             return
         }
         
-        dateFormatter.dateFormat = "dd"
         calendarItems = createDates(from: startDate, to: endDate)
         collectionView.reloadData()
     }
@@ -130,6 +131,7 @@ public class CalendarView: UIView {
         endCalendarItem = nil
         unselectAll()
         
+        titleLabel.text = "Select dates"
         collectionView.reloadData()
     }
     
@@ -159,6 +161,8 @@ public class CalendarView: UIView {
         
         endCalendarItem = nil
         
+        dateFormatter.dateFormat = "MMM dd"
+        titleLabel.text = "\(dateFormatter.string(from: m_calendarItem.date)) - End Date"
         print("Start date: \(m_calendarItem.date)\nEnd Date: nil")
     }
     
@@ -195,6 +199,8 @@ public class CalendarView: UIView {
         } while currentIndexPath.compare(endIndexPath) == .orderedAscending
     }
 }
+
+// MARK: - UICollectionView
 
 extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -278,6 +284,8 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
         
         if let startItem = startCalendarItem, let endItem = endCalendarItem {
             completeDateSelection(true, startCalendarItem: startItem, endCalendarItem: endItem)
+            dateFormatter.dateFormat = "MMM dd"
+            titleLabel.text = "\(dateFormatter.string(from: startItem.date)) - \(dateFormatter.string(from: endItem.date))"
         }
         
         collectionView.reloadData()
