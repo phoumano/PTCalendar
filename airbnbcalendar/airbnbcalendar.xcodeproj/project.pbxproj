@@ -24,6 +24,7 @@
 		354D2D9120CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D8F20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib */; };
 		354D2D9420CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */; };
 		354D2D9520CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */; };
+		354D2D9720CDA99F0098EBA7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D9620CDA99F0098EBA7 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		354D2D8F20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDayCollectionViewCell.xib; sourceTree = "<group>"; };
 		354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
+		354D2D9620CDA99F0098EBA7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 			children = (
 				354D2D6C20CA57B90098EBA7 /* ptcalendar.h */,
 				354D2D8A20CA5AAE0098EBA7 /* CalendarView.swift */,
+				354D2D9620CDA99F0098EBA7 /* Extensions.swift */,
 				354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */,
 				354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */,
 				354D2D8E20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.swift */,
@@ -396,6 +399,7 @@
 				354D2D9020CA6AA90098EBA7 /* CalendarDayCollectionViewCell.swift in Sources */,
 				354D2D8B20CA5AAE0098EBA7 /* CalendarView.swift in Sources */,
 				354D2D9420CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift in Sources */,
+				354D2D9720CDA99F0098EBA7 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

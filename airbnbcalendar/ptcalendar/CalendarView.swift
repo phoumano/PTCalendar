@@ -97,9 +97,7 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
         return dates[section].count
     }
     
-    public func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        referenceSizeForHeaderInSection section: Int) -> CGSize{
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
         return CGSize(width: collectionView.frame.size.width, height: 44)
     }
     
@@ -246,44 +244,5 @@ extension CalendarView {
         }
         
         return calendarDates
-    }
-}
-
-extension Calendar {
-    func monthString(_ month: Int) -> String {
-        switch month {
-        case 1:
-            return "January"
-        case 2:
-            return "February"
-        case 3:
-            return "March"
-        case 4:
-            return "April"
-        case 5:
-            return "May"
-        case 6:
-            return "June"
-        case 7:
-            return "July"
-        case 8:
-            return "August"
-        case 9:
-            return "September"
-        case 10:
-            return "October"
-        case 11:
-            return "November"
-        case 12:
-            return "December"
-        default:
-            return ""
-        }
-    }
-}
-
-extension Date {
-    func isBefore(_ date: Date) -> Bool {
-        return self.compare(date) == .orderedAscending
     }
 }
