@@ -15,16 +15,33 @@ public protocol PTCalendarViewDelegate: class {
     func calendarViewDidTapClearButton(_ calendar: CalendarView)
 }
 
-private struct SelectedDate {
-    let date: Date
-    let indexPath: IndexPath
+public struct CalendarItem {
+    public let date: Date
+    public var indexPath: IndexPath?
+    public var isSelected: Bool
+    public var isStartDate: Bool
+    public var isEndDate: Bool
+    
+    init(date: Date, indexPath: IndexPath? = nil, isSelected: Bool = false, isStartDate: Bool = false, isEndDate: Bool = false) {
+        self.date = date
+        self.indexPath = indexPath
+        self.isSelected = isSelected
+        self.isStartDate = isStartDate
+        self.isEndDate = isEndDate
+    }
 }
 
 public class CalendarView: UIView {
 
-    enum ViewID: String {
+    public enum ViewID: String {
         case clearButton
         case collectionView
+    }
+    
+    private enum Constant {
+        static let HeaderViewHeight: CGFloat = 60
+        static let CalendarDayCollectionViewCell = "CalendarDayCollectionViewCell"
+        static let MonthHeaderCollectionReusableView = "MonthHeaderCollectionReusableView"
     }
     
     // MARK: - IBOutlets
@@ -42,11 +59,11 @@ public class CalendarView: UIView {
             collectionView.dataSource = self
             collectionView.allowsMultipleSelection = true
             
-            let nib = UINib(nibName: "CalendarDayCollectionViewCell", bundle: Bundle.init(for: CalendarDayCollectionViewCell.self))
-            let headerNib = UINib(nibName: "MonthHeaderCollectionReusableView", bundle: Bundle.init(for: MonthHeaderCollectionReusableView.self))
+            let nib = UINib(nibName: Constant.CalendarDayCollectionViewCell, bundle: Bundle.init(for: CalendarDayCollectionViewCell.self))
+            let headerNib = UINib(nibName: Constant.MonthHeaderCollectionReusableView, bundle: Bundle.init(for: MonthHeaderCollectionReusableView.self))
             
-            collectionView.register(nib, forCellWithReuseIdentifier: "CalendarDayCollectionViewCell")
-            collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "MonthHeaderCollectionReusableView")
+            collectionView.register(nib, forCellWithReuseIdentifier: Constant.CalendarDayCollectionViewCell)
+            collectionView.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: Constant.MonthHeaderCollectionReusableView)
         }
     }
     
@@ -59,10 +76,11 @@ public class CalendarView: UIView {
     private var calendar = Calendar.current
     private let dateFormatter = DateFormatter()
 
-    private var dates: [[Date]]!
-    private var selectedStartDate: SelectedDate? {
+    private var calendarItems: [[CalendarItem]]!
+    
+    private var startCalendarItem: CalendarItem? {
         didSet {
-            guard let date = selectedStartDate?.date else {
+            guard let date = startCalendarItem?.date else {
                 return
             }
             
@@ -70,9 +88,9 @@ public class CalendarView: UIView {
         }
     }
     
-    private var selectedEndDate: SelectedDate? {
+    private var endCalendarItem: CalendarItem? {
         didSet {
-            guard let date = selectedEndDate?.date else {
+            guard let date = endCalendarItem?.date else {
                 return
             }
             
@@ -103,37 +121,103 @@ public class CalendarView: UIView {
         }
         
         dateFormatter.dateFormat = "dd"
-        dates = createDates(from: startDate, to: endDate)
+        calendarItems = createDates(from: startDate, to: endDate)
         collectionView.reloadData()
     }
     
     private func reset() {
-        setSelected(false, startDate: selectedStartDate, endDate: selectedEndDate)
-        selectedStartDate = nil
-        selectedEndDate = nil
+        startCalendarItem = nil
+        endCalendarItem = nil
+        unselectAll()
+        
+        collectionView.reloadData()
+    }
+    
+    private func unselectAll() {
+        let selectedItems = calendarItems.flatMap { $0 }.filter { $0.isSelected }
+        
+        selectedItems.forEach { item in
+            var tempItem = item
+            tempItem.isSelected = false
+            reassign(tempItem, indexPath: tempItem.indexPath!)
+        }
+    }
+    
+    private func startNewDateRange(_ calendarItem: CalendarItem, andUnselectAll unselect: Bool = true) {
+        if unselect {
+            unselectAll()
+        }
+        
+        var m_calendarItem = calendarItem
+        m_calendarItem.isSelected = true
+        m_calendarItem.isStartDate = true
+        startCalendarItem = m_calendarItem
+        reassign(m_calendarItem, indexPath: m_calendarItem.indexPath!)
+        
+        endCalendarItem = nil
+        
+        print("Start date: \(m_calendarItem.date)\nEnd Date: nil")
+    }
+    
+    private func reassign(_ calendarItem: CalendarItem, indexPath: IndexPath) {
+        calendarItems[indexPath.section][indexPath.row] = calendarItem
+    }
+    
+    private func completeDateSelection(_ selected: Bool, startCalendarItem: CalendarItem, endCalendarItem: CalendarItem) {
+        
+        // Select/Deselect all dates between startDate and endDate
+        guard let startIndexPath = startCalendarItem.indexPath,
+            let endIndexPath = endCalendarItem.indexPath else {
+                return
+        }
+        
+        var currentIndexPath = IndexPath(row: startIndexPath.row + 1, section: startIndexPath.section)
+        
+        repeat {
+            let tempItems: [CalendarItem] = calendarItems[currentIndexPath.section]
+            
+            if currentIndexPath.row < tempItems.count {
+                // we still have days left in the month to highlight
+                var calendarItem = tempItems[currentIndexPath.row]
+                calendarItem.isSelected = true
+                reassign(calendarItem, indexPath: currentIndexPath)
+                
+                currentIndexPath = IndexPath(row: currentIndexPath.row + 1, section: currentIndexPath.section)
+            }
+            else {
+                // go to next month and start on day 1
+                currentIndexPath = IndexPath(row: 0, section: currentIndexPath.section + 1)
+            }
+            
+        } while currentIndexPath.compare(endIndexPath) == .orderedAscending
     }
 }
 
 extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return dates.count
+        return calendarItems.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dates[section].count
+        return calendarItems[section].count
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize{
-        return CGSize(width: collectionView.frame.size.width, height: 44)
+        return CGSize(width: collectionView.frame.size.width, height: Constant.HeaderViewHeight)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.bounds.size.width / 7
+        return CGSize(width: width, height: width)
     }
     
     public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                         withReuseIdentifier: "MonthHeaderCollectionReusableView",
+                                                                         withReuseIdentifier: Constant.MonthHeaderCollectionReusableView,
                                                                          for: indexPath) as! MonthHeaderCollectionReusableView
 
-        let date = dates[indexPath.section][0]
-        let month = calendar.component(.month, from: date)
+        let calendarItem = calendarItems[indexPath.section][0]
+        let month = calendar.component(.month, from: calendarItem.date)
         
         view.primaryLabel.text = calendar.monthString(month)
         
@@ -141,118 +225,67 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarDayCollectionViewCell", for: indexPath) as? CalendarDayCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constant.CalendarDayCollectionViewCell, for: indexPath) as? CalendarDayCollectionViewCell else {
             fatalError()
         }
         
-        let date = dates[indexPath.section][indexPath.row]
-        cell.configure(with: date, dateFormatter: dateFormatter)
+        var calendarItem = calendarItems[indexPath.section][indexPath.row]
+        calendarItem.indexPath = indexPath
+        reassign(calendarItem, indexPath: indexPath)
+        cell.configure(with: calendarItem, dateFormatter: dateFormatter)
         
         return cell
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let date = dates[indexPath.section][indexPath.row]
+        var calendarItem = calendarItems[indexPath.section][indexPath.row]
 
         // We already have both selected start and end date
-        if selectedStartDate != nil && selectedEndDate != nil {
+        if startCalendarItem != nil && endCalendarItem != nil {
             reset()
+            
+            // Start a new date range
+            startNewDateRange(calendarItem, andUnselectAll: false)
         }
-        
         // We haven't selected anything yet
-        if selectedStartDate == nil && selectedEndDate == nil {
-            selectedStartDate = SelectedDate(date: date, indexPath: indexPath)
-            print("Start date: \(date)\nEnd Date: nil")
-            return
+        else if startCalendarItem == nil && endCalendarItem == nil {
+            // Start a new date range
+            startNewDateRange(calendarItem)
         }
-        
         // Attempting to select an end date
-        if let startDate = selectedStartDate, selectedEndDate == nil {
-            
-            // Make sure the end date is after the start date
-            guard startDate.date.isBefore(date) else {
+        else if let startCalendarItem = startCalendarItem, endCalendarItem == nil {
+            if startCalendarItem.date.isBefore(calendarItem.date) {
+                // User selected an end date that's after the start date
+                calendarItem.isSelected = true
+                calendarItem.isEndDate = true
+                endCalendarItem = calendarItem
+                reassign(calendarItem, indexPath: calendarItem.indexPath!)
                 
-                // Start a new date range
-                collectionView.deselectItem(at: startDate.indexPath, animated: false)
-                selectedStartDate = SelectedDate(date: date, indexPath: indexPath)
-                selectedEndDate = nil
-                print("Start date: \(date)\nEnd Date: nil")
-                return
-            }
-            
-            selectedEndDate = SelectedDate(date: date, indexPath: indexPath)
-            
-            guard let endDate = selectedEndDate else {
-                return
-            }
-
-            print("\n\nStart date: \(startDate.date)\nEnd Date: \(endDate.date)\n\n")
-            
-            setSelected(true, startDate: startDate, endDate: endDate)
-        }
-    }
-    
-    private func setSelected(_ selected: Bool, startDate: SelectedDate?, endDate: SelectedDate?) {
-        
-        // Start Date
-        guard let startDate = startDate, let startDateCell = collectionView.cellForItem(at: startDate.indexPath) as? CalendarDayCollectionViewCell else {
-            return
-        }
-        
-        var startIndexPath = startDate.indexPath
-        startDateCell.isSelected = selected
-        
-        if selected == false {
-            collectionView.deselectItem(at: startDate.indexPath, animated: false)
-        }
-
-        // End Date
-        guard let endDate = endDate, let endDateCell = collectionView.cellForItem(at: endDate.indexPath) as? CalendarDayCollectionViewCell else {
-            return
-        }
-        
-        let endIndexPath = endDate.indexPath
-        endDateCell.isSelected = selected
-
-        if selected == false {
-            collectionView.deselectItem(at: endDate.indexPath, animated: false)
-        }
-
-        // Select/Deselect all dates between startDate and endDate
-        repeat {
-            let tempDates: [Date] = dates[startIndexPath.section]
-            
-            if startIndexPath.row < tempDates.count {
-                // we still have days left in the month to highlight
-                guard let cell = collectionView.cellForItem(at: startIndexPath) as? CalendarDayCollectionViewCell else {
-                    return
-                }
-                
-                cell.isSelected = selected
-                
-                startIndexPath = IndexPath(row: startIndexPath.row + 1, section: startIndexPath.section)
+                print("\n\nStart date: \(startCalendarItem.date)\nEnd Date: \(calendarItem.date)\n\n")
             }
             else {
-                // go to next month and start on day 1
-                startIndexPath = IndexPath(row: 0, section: startIndexPath.section + 1)
+                // User selected an end date BEFORE the start date
+                // Start a new date range
+                startNewDateRange(calendarItem)
             }
-            
-        } while startIndexPath.compare(endIndexPath) == .orderedAscending
+        }
+        
+        if let startItem = startCalendarItem, let endItem = endCalendarItem {
+            completeDateSelection(true, startCalendarItem: startItem, endCalendarItem: endItem)
+        }
+        
+        collectionView.reloadData()
     }
 }
 
 extension CalendarView {
-    func createDates(from startDate: Date, to endDate:Date) -> [[Date]] {
-        var datesArray: [Date] =  [Date]()
+    func createDates(from startDate: Date, to endDate:Date) -> [[CalendarItem]] {
+        var datesArray: [CalendarItem] =  []
         var startDate = startDate
-        let calendar = Calendar.current
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd"
         
         var startNewMonth = false
-        var calendarDates: [[Date]] = []
+        var calendarDates: [[CalendarItem]] = []
         
         while startDate <= endDate {
             
@@ -262,7 +295,8 @@ extension CalendarView {
                 startNewMonth = false
             }
             
-            datesArray.append(startDate)
+            let calendarItem = CalendarItem(date: startDate)
+            datesArray.append(calendarItem)
             
             let previousDateDay = calendar.component(.day, from: startDate)
             startDate = calendar.date(byAdding: .day, value: 1, to: startDate)!

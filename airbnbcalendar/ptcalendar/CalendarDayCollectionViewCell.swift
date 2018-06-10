@@ -11,7 +11,7 @@ import UIKit
 class CalendarDayCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
-        super.awakeFromNib()
+        super.awakeFromNib()        
     }
     
     override var isSelected: Bool {
@@ -29,7 +29,9 @@ class CalendarDayCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var dayLabel: UILabel!
     
-    func configure(with date: Date, dateFormatter: DateFormatter) {
-        dayLabel.text = dateFormatter.string(from: date)
+    func configure(with calendarItem: CalendarItem, dateFormatter: DateFormatter) {
+        dayLabel.text = dateFormatter.string(from: calendarItem.date)
+        
+        isSelected = calendarItem.isSelected
     }
 }

@@ -38,3 +38,9 @@ extension Date {
         return self.compare(date) == .orderedAscending
     }
 }
+
+extension UIView {
+    func roundCorners() {
+        self.layer.cornerRadius = self.bounds.width / 2
+    }
+}

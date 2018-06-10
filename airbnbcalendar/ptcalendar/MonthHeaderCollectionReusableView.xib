@@ -16,15 +16,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibn-7a-jNa">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibn-7a-jNa">
+                    <rect key="frame" x="16" y="0.0" width="304" height="50"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstItem="ibn-7a-jNa" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="ClT-9U-cCe"/>
+                <constraint firstItem="ibn-7a-jNa" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="16" id="ClT-9U-cCe"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="bottom" secondItem="ibn-7a-jNa" secondAttribute="bottom" id="Q5Z-fn-06U"/>
                 <constraint firstItem="ibn-7a-jNa" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" id="UzW-VR-Akd"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="ibn-7a-jNa" secondAttribute="trailing" id="yoD-Ze-D5L"/>
