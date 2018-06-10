@@ -64,6 +64,7 @@ public class CalendarView: UIView {
     // MARK: - IBActions
     
     @IBAction func clearButtonTapped(_ sender: Any) {
+        reset()
 //        delegate?.clearButtonTapped()
     }
     
@@ -85,6 +86,12 @@ public class CalendarView: UIView {
         dateFormatter.dateFormat = "dd"
         dates = createDates(from: startDate, to: endDate)
         collectionView.reloadData()
+    }
+    
+    private func reset() {
+        setSelected(false, startDate: selectedStartDate, endDate: selectedEndDate)
+        selectedStartDate = nil
+        selectedEndDate = nil
     }
 }
 
@@ -130,12 +137,8 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
         let date = dates[indexPath.section][indexPath.row]
 
         // We already have both selected start and end date
-        if let startDate = selectedStartDate, let endDate = selectedEndDate {
-            
-            // Unselect all
-            setSelected(false, startDate: startDate, endDate: endDate)
-            selectedStartDate = nil
-            selectedEndDate = nil
+        if selectedStartDate != nil && selectedEndDate != nil {
+            reset()
         }
         
         // We haven't selected anything yet
@@ -171,19 +174,29 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
         }
     }
     
-    private func setSelected(_ selected: Bool, startDate: SelectedDate, endDate: SelectedDate) {
-        var startIndexPath = startDate.indexPath
-        let endIndexPath = endDate.indexPath
+    private func setSelected(_ selected: Bool, startDate: SelectedDate?, endDate: SelectedDate?) {
         
-        guard let startDateCell = collectionView.cellForItem(at: startDate.indexPath) as? CalendarDayCollectionViewCell,
-            let endDateCell = collectionView.cellForItem(at: endDate.indexPath) as? CalendarDayCollectionViewCell else {
-                return
+        // Start Date
+        guard let startDate = startDate, let startDateCell = collectionView.cellForItem(at: startDate.indexPath) as? CalendarDayCollectionViewCell else {
+            return
         }
+        
+        var startIndexPath = startDate.indexPath
         startDateCell.isSelected = selected
-        endDateCell.isSelected = selected
         
         if selected == false {
             collectionView.deselectItem(at: startDate.indexPath, animated: false)
+        }
+
+        // End Date
+        guard let endDate = endDate, let endDateCell = collectionView.cellForItem(at: endDate.indexPath) as? CalendarDayCollectionViewCell else {
+            return
+        }
+        
+        let endIndexPath = endDate.indexPath
+        endDateCell.isSelected = selected
+
+        if selected == false {
             collectionView.deselectItem(at: endDate.indexPath, animated: false)
         }
 
