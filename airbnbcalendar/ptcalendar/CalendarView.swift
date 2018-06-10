@@ -9,7 +9,9 @@
 import UIKit
 import Foundation
 
-protocol CalendarViewDelegate: class {
+public protocol CalendarViewDelegate: class {
+    func didSelectStartDate(_ date: Date)
+    func didSelectEndDate(_ date: Date)
     func clearButtonTapped()
 }
 
@@ -50,7 +52,7 @@ public class CalendarView: UIView {
     
     // MARK: - Public Properties
     
-//    public weak var delegate: CalendarViewDelegate?
+    weak var delegate: CalendarViewDelegate?
     
     // MARK: - Private Properties
     
@@ -58,14 +60,31 @@ public class CalendarView: UIView {
     private let dateFormatter = DateFormatter()
 
     private var dates: [[Date]]!
-    private var selectedStartDate: SelectedDate?
-    private var selectedEndDate: SelectedDate?
+    private var selectedStartDate: SelectedDate? {
+        didSet {
+            guard let date = selectedStartDate?.date else {
+                return
+            }
+            
+            delegate?.didSelectStartDate(date)
+        }
+    }
+    
+    private var selectedEndDate: SelectedDate? {
+        didSet {
+            guard let date = selectedEndDate?.date else {
+                return
+            }
+            
+            delegate?.didSelectEndDate(date)
+        }
+    }
     
     // MARK: - IBActions
     
     @IBAction func clearButtonTapped(_ sender: Any) {
         reset()
-//        delegate?.clearButtonTapped()
+        delegate?.clearButtonTapped()
     }
     
     // MARK: - Public Functions
