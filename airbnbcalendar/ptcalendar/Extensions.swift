@@ -40,7 +40,13 @@ extension Date {
 }
 
 extension UIView {
-    func roundCorners() {
+    func roundAllCorners() {
+        roundCorners([.layerMaxXMaxYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner, .layerMinXMinYCorner])
+    }
+
+    func roundCorners(_ corners: CACornerMask) {
+        self.layer.masksToBounds = true
         self.layer.cornerRadius = self.bounds.width / 2
+        self.layer.maskedCorners = corners
     }
 }

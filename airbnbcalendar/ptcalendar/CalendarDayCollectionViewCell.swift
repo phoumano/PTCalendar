@@ -7,16 +7,45 @@
 //
 
 import UIKit
-
+import QuartzCore
 class CalendarDayCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
-        super.awakeFromNib()        
+        super.awakeFromNib()
+    }
+
+    @IBOutlet weak var dayLabel: UILabel!
+    
+    @IBOutlet weak var circle: UIView! {
+        didSet {
+            circle.backgroundColor = .green
+        }
     }
     
-    override var isSelected: Bool {
-        didSet {
-            if isSelected {
+    func configure(with calendarItem: CalendarItem, dateFormatter: DateFormatter, showEnds: Bool) {
+        dayLabel.text = dateFormatter.string(from: calendarItem.date)
+        
+        if calendarItem.isStartDate || calendarItem.isEndDate {
+            circle.isHidden = false
+            dayLabel.textColor = .white
+            backgroundColor = .white
+
+            if showEnds {
+                if calendarItem.isStartDate {
+                    circle.roundCorners([.layerMinXMinYCorner, .layerMinXMaxYCorner])
+                }
+                else {
+                    circle.roundCorners([.layerMaxXMinYCorner, .layerMaxXMaxYCorner])
+                }
+            }
+            else {
+                circle.roundAllCorners()
+            }
+        }
+        else {
+            circle.isHidden = true
+            
+            if calendarItem.isSelected {
                 dayLabel.textColor = .white
                 backgroundColor = .green
             }
@@ -25,13 +54,6 @@ class CalendarDayCollectionViewCell: UICollectionViewCell {
                 backgroundColor = .white
             }
         }
-    }
-
-    @IBOutlet weak var dayLabel: UILabel!
-    
-    func configure(with calendarItem: CalendarItem, dateFormatter: DateFormatter) {
-        dayLabel.text = dateFormatter.string(from: calendarItem.date)
         
-        isSelected = calendarItem.isSelected
     }
 }

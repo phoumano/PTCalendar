@@ -19,6 +19,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-cx-Ayx">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n95-I5-dtG">
                         <rect key="frame" x="4" y="15" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -28,11 +32,16 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="M3c-cx-Ayx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="60f-h4-tWC"/>
+                <constraint firstAttribute="trailing" secondItem="M3c-cx-Ayx" secondAttribute="trailing" id="D9P-hA-Xpf"/>
+                <constraint firstItem="M3c-cx-Ayx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HpF-yS-UhG"/>
                 <constraint firstItem="n95-I5-dtG" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Tzj-QI-5s0"/>
+                <constraint firstAttribute="bottom" secondItem="M3c-cx-Ayx" secondAttribute="bottom" id="hdf-YX-sns"/>
                 <constraint firstItem="n95-I5-dtG" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="pB0-Jc-aaS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="circle" destination="M3c-cx-Ayx" id="NaY-Jo-FGz"/>
                 <outlet property="dayLabel" destination="n95-I5-dtG" id="Y1j-oo-QZw"/>
             </connections>
         </collectionViewCell>

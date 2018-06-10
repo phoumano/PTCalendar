@@ -139,6 +139,9 @@ public class CalendarView: UIView {
         selectedItems.forEach { item in
             var tempItem = item
             tempItem.isSelected = false
+            tempItem.isStartDate = false
+            tempItem.isEndDate = false
+            
             reassign(tempItem, indexPath: tempItem.indexPath!)
         }
     }
@@ -232,7 +235,9 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
         var calendarItem = calendarItems[indexPath.section][indexPath.row]
         calendarItem.indexPath = indexPath
         reassign(calendarItem, indexPath: indexPath)
-        cell.configure(with: calendarItem, dateFormatter: dateFormatter)
+        
+        let showEnds = startCalendarItem != nil && endCalendarItem != nil
+        cell.configure(with: calendarItem, dateFormatter: dateFormatter, showEnds: showEnds)
         
         return cell
     }
