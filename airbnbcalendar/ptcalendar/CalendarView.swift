@@ -9,10 +9,10 @@
 import UIKit
 import Foundation
 
-public protocol CalendarViewDelegate: class {
-    func didSelectStartDate(_ date: Date)
-    func didSelectEndDate(_ date: Date)
-    func clearButtonTapped()
+public protocol PTCalendarViewDelegate: class {
+    func calendarView(_ calendar: CalendarView, didSelectStartDate date: Date)
+    func calendarView(_ calendar: CalendarView, didSelectEndDate date: Date)
+    func calendarViewDidTapClearButton(_ calendar: CalendarView)
 }
 
 private struct SelectedDate {
@@ -52,7 +52,7 @@ public class CalendarView: UIView {
     
     // MARK: - Public Properties
     
-    weak var delegate: CalendarViewDelegate?
+    public weak var delegate: PTCalendarViewDelegate?
     
     // MARK: - Private Properties
     
@@ -66,7 +66,7 @@ public class CalendarView: UIView {
                 return
             }
             
-            delegate?.didSelectStartDate(date)
+            delegate?.calendarView(self, didSelectStartDate: date)
         }
     }
     
@@ -76,7 +76,7 @@ public class CalendarView: UIView {
                 return
             }
             
-            delegate?.didSelectEndDate(date)
+            delegate?.calendarView(self, didSelectEndDate: date)
         }
     }
     
@@ -84,7 +84,7 @@ public class CalendarView: UIView {
     
     @IBAction func clearButtonTapped(_ sender: Any) {
         reset()
-        delegate?.clearButtonTapped()
+        delegate?.calendarViewDidTapClearButton(self)
     }
     
     // MARK: - Public Functions
