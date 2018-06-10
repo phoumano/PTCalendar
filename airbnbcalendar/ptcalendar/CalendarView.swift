@@ -15,7 +15,7 @@ public protocol PTCalendarViewDelegate: class {
     func calendarViewDidTapClearButton(_ calendar: CalendarView)
 }
 
-public struct CalendarItem {
+public class CalendarItem {
     public let date: Date
     public var indexPath: IndexPath?
     public var isSelected: Bool
@@ -30,6 +30,8 @@ public struct CalendarItem {
         self.isEndDate = isEndDate
     }
 }
+
+public class EmptyCalendarItem: CalendarItem { }
 
 public class CalendarView: UIView {
 
@@ -139,7 +141,7 @@ public class CalendarView: UIView {
         let selectedItems = calendarItems.flatMap { $0 }.filter { $0.isSelected }
         
         selectedItems.forEach { item in
-            var tempItem = item
+            let tempItem = item
             tempItem.isSelected = false
             tempItem.isStartDate = false
             tempItem.isEndDate = false
@@ -153,7 +155,7 @@ public class CalendarView: UIView {
             unselectAll()
         }
         
-        var m_calendarItem = calendarItem
+        let m_calendarItem = calendarItem
         m_calendarItem.isSelected = true
         m_calendarItem.isStartDate = true
         startCalendarItem = m_calendarItem
@@ -185,7 +187,7 @@ public class CalendarView: UIView {
             
             if currentIndexPath.row < tempItems.count {
                 // we still have days left in the month to highlight
-                var calendarItem = tempItems[currentIndexPath.row]
+                let calendarItem = tempItems[currentIndexPath.row]
                 calendarItem.isSelected = true
                 reassign(calendarItem, indexPath: currentIndexPath)
                 
@@ -238,7 +240,7 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
             fatalError()
         }
         
-        var calendarItem = calendarItems[indexPath.section][indexPath.row]
+        let calendarItem = calendarItems[indexPath.section][indexPath.row]
         calendarItem.indexPath = indexPath
         reassign(calendarItem, indexPath: indexPath)
         
@@ -250,7 +252,7 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        var calendarItem = calendarItems[indexPath.section][indexPath.row]
+        let calendarItem = calendarItems[indexPath.section][indexPath.row]
 
         // We already have both selected start and end date
         if startCalendarItem != nil && endCalendarItem != nil {
@@ -295,29 +297,45 @@ extension CalendarView: UICollectionViewDataSource, UICollectionViewDelegate, UI
 extension CalendarView {
     func createDates(from startDate: Date, to endDate:Date) -> [[CalendarItem]] {
         var datesArray: [CalendarItem] =  []
-        var startDate = startDate
+        var currentDate = startDate
         
         var startNewMonth = false
         var calendarDates: [[CalendarItem]] = []
         
-        while startDate <= endDate {
+        while currentDate <= endDate {
             
             if startNewMonth {
                 calendarDates.append(datesArray)
                 datesArray.removeAll()
                 startNewMonth = false
+                
+                let dayOfWeek = calendar.component(.weekday, from: currentDate)
+                let numberOfDaysBeforeStartOfMonth = dayOfWeek - 1
+                let emptyDays = Array.init(repeating: EmptyCalendarItem(date: currentDate), count: numberOfDaysBeforeStartOfMonth)
+                datesArray.append(contentsOf: emptyDays)
             }
             
-            let calendarItem = CalendarItem(date: startDate)
+            let calendarItem = CalendarItem(date: currentDate)
             datesArray.append(calendarItem)
             
-            let previousDateDay = calendar.component(.day, from: startDate)
-            startDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
+            let previousDate = currentDate
+            let previousDateDay = calendar.component(.day, from: currentDate)
+            currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
             
             // Get month of dates to find out if it's a new day
-            let startDateDay = calendar.component(.day, from: startDate)
+            let startDateDay = calendar.component(.day, from: currentDate)
 
             if startDateDay < previousDateDay {
+                // End of the month
+                // Get day of the week to figure out empty days
+                let dayOfWeek = calendar.component(.weekday, from: previousDate)
+                let numberOfDaysUntilEndOfWeek = 7 - dayOfWeek
+                
+                if numberOfDaysUntilEndOfWeek > 0 {
+                    let emptyDays = Array.init(repeating: EmptyCalendarItem(date: Date()), count: numberOfDaysUntilEndOfWeek)
+                    datesArray.append(contentsOf: emptyDays)
+                }
+                
                 startNewMonth = true
             }
         }

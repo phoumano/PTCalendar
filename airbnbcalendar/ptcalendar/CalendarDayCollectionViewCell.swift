@@ -23,8 +23,13 @@ class CalendarDayCollectionViewCell: UICollectionViewCell {
     }
     
     func configure(with calendarItem: CalendarItem, dateFormatter: DateFormatter, showEnds: Bool) {
-        dateFormatter.dateFormat = "d"
-        dayLabel.text = dateFormatter.string(from: calendarItem.date)
+        if calendarItem is EmptyCalendarItem {
+            dayLabel.text = ""
+        }
+        else {
+            dateFormatter.dateFormat = "d"
+            dayLabel.text = dateFormatter.string(from: calendarItem.date)
+        }
         
         if calendarItem.isStartDate || calendarItem.isEndDate {
             circle.isHidden = false
