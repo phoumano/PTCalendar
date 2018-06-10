@@ -13,6 +13,17 @@
 		354D2D4D20CA56F40098EBA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D4C20CA56F40098EBA7 /* Assets.xcassets */; };
 		354D2D5020CA56F40098EBA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D4E20CA56F40098EBA7 /* LaunchScreen.storyboard */; };
 		354D2D5B20CA56F40098EBA7 /* airbnbcalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D5A20CA56F40098EBA7 /* airbnbcalendarTests.swift */; };
+		354D2D7320CA57B90098EBA7 /* ptcalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354D2D6A20CA57B90098EBA7 /* ptcalendar.framework */; };
+		354D2D7A20CA57B90098EBA7 /* ptcalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D7920CA57B90098EBA7 /* ptcalendarTests.swift */; };
+		354D2D7C20CA57B90098EBA7 /* ptcalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 354D2D6C20CA57B90098EBA7 /* ptcalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		354D2D7F20CA57B90098EBA7 /* ptcalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 354D2D6A20CA57B90098EBA7 /* ptcalendar.framework */; };
+		354D2D8020CA57B90098EBA7 /* ptcalendar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 354D2D6A20CA57B90098EBA7 /* ptcalendar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		354D2D8B20CA5AAE0098EBA7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D8A20CA5AAE0098EBA7 /* CalendarView.swift */; };
+		354D2D8D20CA5ABD0098EBA7 /* CalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D8C20CA5ABD0098EBA7 /* CalendarView.xib */; };
+		354D2D9020CA6AA90098EBA7 /* CalendarDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D8E20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.swift */; };
+		354D2D9120CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D8F20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib */; };
+		354D2D9420CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */; };
+		354D2D9520CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +34,42 @@
 			remoteGlobalIDString = 354D2D4120CA56F20098EBA7;
 			remoteInfo = airbnbcalendar;
 		};
+		354D2D7420CA57B90098EBA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 354D2D3A20CA56F20098EBA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 354D2D6920CA57B90098EBA7;
+			remoteInfo = ptcalendar;
+		};
+		354D2D7620CA57B90098EBA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 354D2D3A20CA56F20098EBA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 354D2D4120CA56F20098EBA7;
+			remoteInfo = airbnbcalendar;
+		};
+		354D2D7D20CA57B90098EBA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 354D2D3A20CA56F20098EBA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 354D2D6920CA57B90098EBA7;
+			remoteInfo = ptcalendar;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		354D2D8420CA57B90098EBA7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				354D2D8020CA57B90098EBA7 /* ptcalendar.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		354D2D4220CA56F20098EBA7 /* airbnbcalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airbnbcalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,6 +82,18 @@
 		354D2D5620CA56F40098EBA7 /* airbnbcalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = airbnbcalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		354D2D5A20CA56F40098EBA7 /* airbnbcalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = airbnbcalendarTests.swift; sourceTree = "<group>"; };
 		354D2D5C20CA56F40098EBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354D2D6A20CA57B90098EBA7 /* ptcalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ptcalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		354D2D6C20CA57B90098EBA7 /* ptcalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ptcalendar.h; sourceTree = "<group>"; };
+		354D2D6D20CA57B90098EBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354D2D7220CA57B90098EBA7 /* ptcalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ptcalendarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		354D2D7920CA57B90098EBA7 /* ptcalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ptcalendarTests.swift; sourceTree = "<group>"; };
+		354D2D7B20CA57B90098EBA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		354D2D8A20CA5AAE0098EBA7 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		354D2D8C20CA5ABD0098EBA7 /* CalendarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarView.xib; sourceTree = "<group>"; };
+		354D2D8E20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCollectionViewCell.swift; sourceTree = "<group>"; };
+		354D2D8F20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarDayCollectionViewCell.xib; sourceTree = "<group>"; };
+		354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				354D2D7F20CA57B90098EBA7 /* ptcalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +109,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354D2D6620CA57B90098EBA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354D2D6F20CA57B90098EBA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354D2D7320CA57B90098EBA7 /* ptcalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +135,8 @@
 			children = (
 				354D2D4420CA56F20098EBA7 /* airbnbcalendar */,
 				354D2D5920CA56F40098EBA7 /* airbnbcalendarTests */,
+				354D2D6B20CA57B90098EBA7 /* ptcalendar */,
+				354D2D7820CA57B90098EBA7 /* ptcalendarTests */,
 				354D2D4320CA56F20098EBA7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,6 +146,8 @@
 			children = (
 				354D2D4220CA56F20098EBA7 /* airbnbcalendar.app */,
 				354D2D5620CA56F40098EBA7 /* airbnbcalendarTests.xctest */,
+				354D2D6A20CA57B90098EBA7 /* ptcalendar.framework */,
+				354D2D7220CA57B90098EBA7 /* ptcalendarTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +174,42 @@
 			path = airbnbcalendarTests;
 			sourceTree = "<group>";
 		};
+		354D2D6B20CA57B90098EBA7 /* ptcalendar */ = {
+			isa = PBXGroup;
+			children = (
+				354D2D6C20CA57B90098EBA7 /* ptcalendar.h */,
+				354D2D8A20CA5AAE0098EBA7 /* CalendarView.swift */,
+				354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */,
+				354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */,
+				354D2D8E20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.swift */,
+				354D2D8F20CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib */,
+				354D2D8C20CA5ABD0098EBA7 /* CalendarView.xib */,
+				354D2D6D20CA57B90098EBA7 /* Info.plist */,
+			);
+			path = ptcalendar;
+			sourceTree = "<group>";
+		};
+		354D2D7820CA57B90098EBA7 /* ptcalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				354D2D7920CA57B90098EBA7 /* ptcalendarTests.swift */,
+				354D2D7B20CA57B90098EBA7 /* Info.plist */,
+			);
+			path = ptcalendarTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		354D2D6720CA57B90098EBA7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354D2D7C20CA57B90098EBA7 /* ptcalendar.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		354D2D4120CA56F20098EBA7 /* airbnbcalendar */ = {
@@ -106,10 +219,12 @@
 				354D2D3E20CA56F20098EBA7 /* Sources */,
 				354D2D3F20CA56F20098EBA7 /* Frameworks */,
 				354D2D4020CA56F20098EBA7 /* Resources */,
+				354D2D8420CA57B90098EBA7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				354D2D7E20CA57B90098EBA7 /* PBXTargetDependency */,
 			);
 			name = airbnbcalendar;
 			productName = airbnbcalendar;
@@ -134,6 +249,43 @@
 			productReference = 354D2D5620CA56F40098EBA7 /* airbnbcalendarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		354D2D6920CA57B90098EBA7 /* ptcalendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 354D2D8120CA57B90098EBA7 /* Build configuration list for PBXNativeTarget "ptcalendar" */;
+			buildPhases = (
+				354D2D6520CA57B90098EBA7 /* Sources */,
+				354D2D6620CA57B90098EBA7 /* Frameworks */,
+				354D2D6720CA57B90098EBA7 /* Headers */,
+				354D2D6820CA57B90098EBA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ptcalendar;
+			productName = ptcalendar;
+			productReference = 354D2D6A20CA57B90098EBA7 /* ptcalendar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		354D2D7120CA57B90098EBA7 /* ptcalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 354D2D8520CA57B90098EBA7 /* Build configuration list for PBXNativeTarget "ptcalendarTests" */;
+			buildPhases = (
+				354D2D6E20CA57B90098EBA7 /* Sources */,
+				354D2D6F20CA57B90098EBA7 /* Frameworks */,
+				354D2D7020CA57B90098EBA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				354D2D7520CA57B90098EBA7 /* PBXTargetDependency */,
+				354D2D7720CA57B90098EBA7 /* PBXTargetDependency */,
+			);
+			name = ptcalendarTests;
+			productName = ptcalendarTests;
+			productReference = 354D2D7220CA57B90098EBA7 /* ptcalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -148,6 +300,14 @@
 						CreatedOnToolsVersion = 9.4;
 					};
 					354D2D5520CA56F40098EBA7 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 354D2D4120CA56F20098EBA7;
+					};
+					354D2D6920CA57B90098EBA7 = {
+						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
+					};
+					354D2D7120CA57B90098EBA7 = {
 						CreatedOnToolsVersion = 9.4;
 						TestTargetID = 354D2D4120CA56F20098EBA7;
 					};
@@ -168,6 +328,8 @@
 			targets = (
 				354D2D4120CA56F20098EBA7 /* airbnbcalendar */,
 				354D2D5520CA56F40098EBA7 /* airbnbcalendarTests */,
+				354D2D6920CA57B90098EBA7 /* ptcalendar */,
+				354D2D7120CA57B90098EBA7 /* ptcalendarTests */,
 			);
 		};
 /* End PBXProject section */
@@ -184,6 +346,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		354D2D5420CA56F40098EBA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354D2D6820CA57B90098EBA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354D2D8D20CA5ABD0098EBA7 /* CalendarView.xib in Resources */,
+				354D2D9120CA6AA90098EBA7 /* CalendarDayCollectionViewCell.xib in Resources */,
+				354D2D9520CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354D2D7020CA57B90098EBA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -210,6 +389,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		354D2D6520CA57B90098EBA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354D2D9020CA6AA90098EBA7 /* CalendarDayCollectionViewCell.swift in Sources */,
+				354D2D8B20CA5AAE0098EBA7 /* CalendarView.swift in Sources */,
+				354D2D9420CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		354D2D6E20CA57B90098EBA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				354D2D7A20CA57B90098EBA7 /* ptcalendarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -217,6 +414,21 @@
 			isa = PBXTargetDependency;
 			target = 354D2D4120CA56F20098EBA7 /* airbnbcalendar */;
 			targetProxy = 354D2D5720CA56F40098EBA7 /* PBXContainerItemProxy */;
+		};
+		354D2D7520CA57B90098EBA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 354D2D6920CA57B90098EBA7 /* ptcalendar */;
+			targetProxy = 354D2D7420CA57B90098EBA7 /* PBXContainerItemProxy */;
+		};
+		354D2D7720CA57B90098EBA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 354D2D4120CA56F20098EBA7 /* airbnbcalendar */;
+			targetProxy = 354D2D7620CA57B90098EBA7 /* PBXContainerItemProxy */;
+		};
+		354D2D7E20CA57B90098EBA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 354D2D6920CA57B90098EBA7 /* ptcalendar */;
+			targetProxy = 354D2D7D20CA57B90098EBA7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -357,6 +569,7 @@
 		354D2D6020CA56F40098EBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
@@ -375,6 +588,7 @@
 		354D2D6120CA56F40098EBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
@@ -432,6 +646,105 @@
 			};
 			name = Release;
 		};
+		354D2D8220CA57B90098EBA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NRKD4B5BRK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ptcalendar/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendar;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		354D2D8320CA57B90098EBA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = NRKD4B5BRK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ptcalendar/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendar;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		354D2D8620CA57B90098EBA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRKD4B5BRK;
+				INFOPLIST_FILE = ptcalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/airbnbcalendar.app/airbnbcalendar";
+			};
+			name = Debug;
+		};
+		354D2D8720CA57B90098EBA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NRKD4B5BRK;
+				INFOPLIST_FILE = ptcalendarTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendarTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/airbnbcalendar.app/airbnbcalendar";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -458,6 +771,24 @@
 			buildConfigurations = (
 				354D2D6320CA56F40098EBA7 /* Debug */,
 				354D2D6420CA56F40098EBA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		354D2D8120CA57B90098EBA7 /* Build configuration list for PBXNativeTarget "ptcalendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354D2D8220CA57B90098EBA7 /* Debug */,
+				354D2D8320CA57B90098EBA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		354D2D8520CA57B90098EBA7 /* Build configuration list for PBXNativeTarget "ptcalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				354D2D8620CA57B90098EBA7 /* Debug */,
+				354D2D8720CA57B90098EBA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

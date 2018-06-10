@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import ptcalendar
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        loadCalendar()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - Private Functions
+    
+    private func loadCalendar() {
+        let nib = UINib(nibName: "CalendarView", bundle: Bundle.init(for: CalendarView.self))
+        let objects = nib.instantiate(withOwner: nil, options: nil)
+        let calendarView = objects.first as! CalendarView
+        calendarView.frame = view.frame
+        
+        view.addSubview(calendarView)
     }
-
-
 }
 
