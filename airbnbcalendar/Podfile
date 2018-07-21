@@ -9,12 +9,6 @@ target 'airbnbcalendar' do
 
   target 'airbnbcalendarTests' do
     inherit! :search_paths
-    pod 'Quick'
-    pod 'Nimble'
-    pod 'Spry+Nimble'
-    pod 'AutoEquatable'
-    pod 'KIF', :configurations => ['Debug']
-    pod 'KIF/IdentifierTests', :configurations => ['Debug']
   end
 
 end
@@ -27,7 +21,12 @@ target 'ptcalendar' do
 
   target 'ptcalendarTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'Spry+Nimble'
+    pod 'AutoEquatable'
+    pod 'KIF', :configurations => ['Debug']
+    pod 'KIF/IdentifierTests', :configurations => ['Debug']
   end
 
 end

@@ -26,6 +26,7 @@
 		354D2D9420CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */; };
 		354D2D9520CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */; };
 		354D2D9720CDA99F0098EBA7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D9620CDA99F0098EBA7 /* Extensions.swift */; };
+		35B47A5E210304EB008509F5 /* CalendarDayCollectionViewCellSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B47A5D210304EB008509F5 /* CalendarDayCollectionViewCellSpec.swift */; };
 		49ECDD31BD6ABB7FC86B56D4 /* Pods_airbnbcalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A520D922A6D590E1B39CEC33 /* Pods_airbnbcalendarTests.framework */; };
 		96CE2164A6FA9891F171F4EF /* Pods_ptcalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEB5C2A3E8D6F27ABD17BE9 /* Pods_ptcalendarTests.framework */; };
 		F39828313531391209A8461F /* Pods_ptcalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF6A7AEDEA79A9CAFB77E3E /* Pods_ptcalendar.framework */; };
@@ -104,6 +105,7 @@
 		354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		354D2D9620CDA99F0098EBA7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		35B47A5D210304EB008509F5 /* CalendarDayCollectionViewCellSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayCollectionViewCellSpec.swift; sourceTree = "<group>"; };
 		3EC26C7707909F1B638A1040 /* Pods-ptcalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptcalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ptcalendar/Pods-ptcalendar.release.xcconfig"; sourceTree = "<group>"; };
 		5723AE00616943FD3AC725A0 /* Pods-ptcalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptcalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ptcalendarTests/Pods-ptcalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5BE0C1870919AE26E7294E55 /* Pods_airbnbcalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_airbnbcalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				354D2D7920CA57B90098EBA7 /* ptcalendarTests.swift */,
+				35B47A5D210304EB008509F5 /* CalendarDayCollectionViewCellSpec.swift */,
 				354D2D7B20CA57B90098EBA7 /* Info.plist */,
 			);
 			path = ptcalendarTests;
@@ -291,7 +294,6 @@
 				354D2D5220CA56F40098EBA7 /* Sources */,
 				354D2D5320CA56F40098EBA7 /* Frameworks */,
 				354D2D5420CA56F40098EBA7 /* Resources */,
-				08363E7F96F9CEA1F7EF4DBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,6 +332,7 @@
 				354D2D6E20CA57B90098EBA7 /* Sources */,
 				354D2D6F20CA57B90098EBA7 /* Frameworks */,
 				354D2D7020CA57B90098EBA7 /* Resources */,
+				3F5E449BED708DB5B8199068 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -428,34 +431,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08363E7F96F9CEA1F7EF4DBC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-airbnbcalendarTests/Pods-airbnbcalendarTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AutoEquatable/AutoEquatable.framework",
-				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-				"${BUILT_PRODUCTS_DIR}/Spry/Spry.framework",
-				"${BUILT_PRODUCTS_DIR}/Spry+Nimble/Spry_Nimble.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoEquatable.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KIF.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spry_Nimble.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airbnbcalendarTests/Pods-airbnbcalendarTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		09E4BE197ADEFC7F9154953C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +465,34 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F5E449BED708DB5B8199068 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ptcalendarTests/Pods-ptcalendarTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AutoEquatable/AutoEquatable.framework",
+				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/Spry/Spry.framework",
+				"${BUILT_PRODUCTS_DIR}/Spry+Nimble/Spry_Nimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoEquatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KIF.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spry_Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ptcalendarTests/Pods-ptcalendarTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C601DF22EB5D2ABB672A4AA8 /* [CP] Check Pods Manifest.lock */ = {
@@ -563,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B47A5E210304EB008509F5 /* CalendarDayCollectionViewCellSpec.swift in Sources */,
 				354D2D7A20CA57B90098EBA7 /* ptcalendarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
