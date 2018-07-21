@@ -9,12 +9,5 @@
 import UIKit
 
 class MonthHeaderCollectionReusableView: UICollectionReusableView {
-
     @IBOutlet weak var primaryLabel: UILabel!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
 }

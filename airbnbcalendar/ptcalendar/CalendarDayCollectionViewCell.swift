@@ -9,11 +9,7 @@
 import UIKit
 import QuartzCore
 class CalendarDayCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
+    
     @IBOutlet weak var dayLabel: UILabel!
     
     @IBOutlet weak var circle: UIView! {
