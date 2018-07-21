@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A939A87B6DEEA8313DF9686 /* Pods_airbnbcalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE0C1870919AE26E7294E55 /* Pods_airbnbcalendar.framework */; };
 		354D2D4620CA56F20098EBA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D4520CA56F20098EBA7 /* AppDelegate.swift */; };
 		354D2D4820CA56F20098EBA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D4720CA56F20098EBA7 /* ViewController.swift */; };
 		354D2D4B20CA56F20098EBA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D4920CA56F20098EBA7 /* Main.storyboard */; };
@@ -25,6 +26,9 @@
 		354D2D9420CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */; };
 		354D2D9520CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */; };
 		354D2D9720CDA99F0098EBA7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354D2D9620CDA99F0098EBA7 /* Extensions.swift */; };
+		49ECDD31BD6ABB7FC86B56D4 /* Pods_airbnbcalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A520D922A6D590E1B39CEC33 /* Pods_airbnbcalendarTests.framework */; };
+		96CE2164A6FA9891F171F4EF /* Pods_ptcalendarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DEB5C2A3E8D6F27ABD17BE9 /* Pods_ptcalendarTests.framework */; };
+		F39828313531391209A8461F /* Pods_ptcalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF6A7AEDEA79A9CAFB77E3E /* Pods_ptcalendar.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +77,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0647ED7AA6623CF6B5683463 /* Pods-ptcalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptcalendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ptcalendarTests/Pods-ptcalendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		0D6F7EB2F54553FFEF48DB79 /* Pods-airbnbcalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-airbnbcalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-airbnbcalendar/Pods-airbnbcalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		1DF6A7AEDEA79A9CAFB77E3E /* Pods_ptcalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ptcalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		24E22128492EC6ED50EBD89E /* Pods-airbnbcalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-airbnbcalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-airbnbcalendarTests/Pods-airbnbcalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		354D2D4220CA56F20098EBA7 /* airbnbcalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = airbnbcalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		354D2D4520CA56F20098EBA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		354D2D4720CA56F20098EBA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +104,14 @@
 		354D2D9220CD87F10098EBA7 /* MonthHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		354D2D9320CD87F10098EBA7 /* MonthHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		354D2D9620CDA99F0098EBA7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		3EC26C7707909F1B638A1040 /* Pods-ptcalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptcalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ptcalendar/Pods-ptcalendar.release.xcconfig"; sourceTree = "<group>"; };
+		5723AE00616943FD3AC725A0 /* Pods-ptcalendarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptcalendarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ptcalendarTests/Pods-ptcalendarTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BE0C1870919AE26E7294E55 /* Pods_airbnbcalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_airbnbcalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75A2EE3437EEAC52DDF183BA /* Pods-airbnbcalendarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-airbnbcalendarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-airbnbcalendarTests/Pods-airbnbcalendarTests.release.xcconfig"; sourceTree = "<group>"; };
+		8DEB5C2A3E8D6F27ABD17BE9 /* Pods_ptcalendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ptcalendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99EAF9DF68F7F67AD8AF5B66 /* Pods-ptcalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ptcalendar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ptcalendar/Pods-ptcalendar.debug.xcconfig"; sourceTree = "<group>"; };
+		A520D922A6D590E1B39CEC33 /* Pods_airbnbcalendarTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_airbnbcalendarTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6532C74E9D2918D8679E342 /* Pods-airbnbcalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-airbnbcalendar.release.xcconfig"; path = "Pods/Target Support Files/Pods-airbnbcalendar/Pods-airbnbcalendar.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +120,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				354D2D7F20CA57B90098EBA7 /* ptcalendar.framework in Frameworks */,
+				2A939A87B6DEEA8313DF9686 /* Pods_airbnbcalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49ECDD31BD6ABB7FC86B56D4 /* Pods_airbnbcalendarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F39828313531391209A8461F /* Pods_ptcalendar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,12 +145,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				354D2D7320CA57B90098EBA7 /* ptcalendar.framework in Frameworks */,
+				96CE2164A6FA9891F171F4EF /* Pods_ptcalendarTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21116A122A413BFFB7F82295 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BE0C1870919AE26E7294E55 /* Pods_airbnbcalendar.framework */,
+				A520D922A6D590E1B39CEC33 /* Pods_airbnbcalendarTests.framework */,
+				1DF6A7AEDEA79A9CAFB77E3E /* Pods_ptcalendar.framework */,
+				8DEB5C2A3E8D6F27ABD17BE9 /* Pods_ptcalendarTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		354D2D3920CA56F20098EBA7 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +171,8 @@
 				354D2D6B20CA57B90098EBA7 /* ptcalendar */,
 				354D2D7820CA57B90098EBA7 /* ptcalendarTests */,
 				354D2D4320CA56F20098EBA7 /* Products */,
+				E2C87BAA8D80254661D3EA69 /* Pods */,
+				21116A122A413BFFB7F82295 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +234,21 @@
 			path = ptcalendarTests;
 			sourceTree = "<group>";
 		};
+		E2C87BAA8D80254661D3EA69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0D6F7EB2F54553FFEF48DB79 /* Pods-airbnbcalendar.debug.xcconfig */,
+				E6532C74E9D2918D8679E342 /* Pods-airbnbcalendar.release.xcconfig */,
+				24E22128492EC6ED50EBD89E /* Pods-airbnbcalendarTests.debug.xcconfig */,
+				75A2EE3437EEAC52DDF183BA /* Pods-airbnbcalendarTests.release.xcconfig */,
+				99EAF9DF68F7F67AD8AF5B66 /* Pods-ptcalendar.debug.xcconfig */,
+				3EC26C7707909F1B638A1040 /* Pods-ptcalendar.release.xcconfig */,
+				5723AE00616943FD3AC725A0 /* Pods-ptcalendarTests.debug.xcconfig */,
+				0647ED7AA6623CF6B5683463 /* Pods-ptcalendarTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -219,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 354D2D5F20CA56F40098EBA7 /* Build configuration list for PBXNativeTarget "airbnbcalendar" */;
 			buildPhases = (
+				C601DF22EB5D2ABB672A4AA8 /* [CP] Check Pods Manifest.lock */,
 				354D2D3E20CA56F20098EBA7 /* Sources */,
 				354D2D3F20CA56F20098EBA7 /* Frameworks */,
 				354D2D4020CA56F20098EBA7 /* Resources */,
@@ -238,9 +287,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 354D2D6220CA56F40098EBA7 /* Build configuration list for PBXNativeTarget "airbnbcalendarTests" */;
 			buildPhases = (
+				3A18C20AC9DB1C384E4851FA /* [CP] Check Pods Manifest.lock */,
 				354D2D5220CA56F40098EBA7 /* Sources */,
 				354D2D5320CA56F40098EBA7 /* Frameworks */,
 				354D2D5420CA56F40098EBA7 /* Resources */,
+				08363E7F96F9CEA1F7EF4DBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +307,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 354D2D8120CA57B90098EBA7 /* Build configuration list for PBXNativeTarget "ptcalendar" */;
 			buildPhases = (
+				FBBF8721A10333B4ABFF484A /* [CP] Check Pods Manifest.lock */,
 				354D2D6520CA57B90098EBA7 /* Sources */,
 				354D2D6620CA57B90098EBA7 /* Frameworks */,
 				354D2D6720CA57B90098EBA7 /* Headers */,
@@ -274,6 +326,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 354D2D8520CA57B90098EBA7 /* Build configuration list for PBXNativeTarget "ptcalendarTests" */;
 			buildPhases = (
+				09E4BE197ADEFC7F9154953C /* [CP] Check Pods Manifest.lock */,
 				354D2D6E20CA57B90098EBA7 /* Sources */,
 				354D2D6F20CA57B90098EBA7 /* Frameworks */,
 				354D2D7020CA57B90098EBA7 /* Resources */,
@@ -373,6 +426,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08363E7F96F9CEA1F7EF4DBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-airbnbcalendarTests/Pods-airbnbcalendarTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AutoEquatable/AutoEquatable.framework",
+				"${BUILT_PRODUCTS_DIR}/KIF/KIF.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+				"${BUILT_PRODUCTS_DIR}/Spry/Spry.framework",
+				"${BUILT_PRODUCTS_DIR}/Spry+Nimble/Spry_Nimble.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoEquatable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KIF.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spry_Nimble.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-airbnbcalendarTests/Pods-airbnbcalendarTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		09E4BE197ADEFC7F9154953C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ptcalendarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A18C20AC9DB1C384E4851FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-airbnbcalendarTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C601DF22EB5D2ABB672A4AA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-airbnbcalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBBF8721A10333B4ABFF484A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ptcalendar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		354D2D3E20CA56F20098EBA7 /* Sources */ = {
@@ -572,16 +728,14 @@
 		};
 		354D2D6020CA56F40098EBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D6F7EB2F54553FFEF48DB79 /* Pods-airbnbcalendar.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
 				INFOPLIST_FILE = airbnbcalendar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.airbnbcalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -591,16 +745,14 @@
 		};
 		354D2D6120CA56F40098EBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6532C74E9D2918D8679E342 /* Pods-airbnbcalendar.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
 				INFOPLIST_FILE = airbnbcalendar/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.airbnbcalendar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -610,17 +762,14 @@
 		};
 		354D2D6320CA56F40098EBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24E22128492EC6ED50EBD89E /* Pods-airbnbcalendarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
 				INFOPLIST_FILE = airbnbcalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.airbnbcalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -631,17 +780,14 @@
 		};
 		354D2D6420CA56F40098EBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75A2EE3437EEAC52DDF183BA /* Pods-airbnbcalendarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
 				INFOPLIST_FILE = airbnbcalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.airbnbcalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -652,6 +798,7 @@
 		};
 		354D2D8220CA57B90098EBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99EAF9DF68F7F67AD8AF5B66 /* Pods-ptcalendar.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -664,11 +811,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ptcalendar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -682,6 +825,7 @@
 		};
 		354D2D8320CA57B90098EBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC26C7707909F1B638A1040 /* Pods-ptcalendar.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -694,11 +838,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ptcalendar/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -711,16 +851,13 @@
 		};
 		354D2D8620CA57B90098EBA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5723AE00616943FD3AC725A0 /* Pods-ptcalendarTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
 				INFOPLIST_FILE = ptcalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -731,16 +868,13 @@
 		};
 		354D2D8720CA57B90098EBA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0647ED7AA6623CF6B5683463 /* Pods-ptcalendarTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NRKD4B5BRK;
 				INFOPLIST_FILE = ptcalendarTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.phoumano.ptcalendarTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
