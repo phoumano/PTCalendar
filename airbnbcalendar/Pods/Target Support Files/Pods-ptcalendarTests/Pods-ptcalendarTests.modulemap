@@ -1,6 +1,0 @@
-framework module Pods_ptcalendarTests {
-  umbrella header "Pods-ptcalendarTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '11.0'
 
 target 'airbnbcalendar' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -8,18 +8,6 @@ target 'airbnbcalendar' do
   # Pods for airbnbcalendar
 
   target 'airbnbcalendarTests' do
-    inherit! :search_paths
-  end
-
-end
-
-target 'ptcalendar' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for ptcalendar
-
-  target 'ptcalendarTests' do
     inherit! :search_paths
     pod 'Quick'
     pod 'Nimble'

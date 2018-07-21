@@ -1,6 +1,0 @@
-framework module Pods_ptcalendar {
-  umbrella header "Pods-ptcalendar-umbrella.h"
-
-  export *
-  module * { export * }
-}
